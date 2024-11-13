@@ -19,7 +19,7 @@ const Keys={
   "auth_provider_x509_cert_url": process.env.AUTH_PROVIDER_X509_CERT_URL,
   "client_x509_cert_url": process.env.CLIENT_X509_CERT_URL,
   "universe_domain": process.env.UNIVERSE_DOMAIN
-
+   
 
    }
 const auth = new google.auth.GoogleAuth({
@@ -29,13 +29,13 @@ const auth = new google.auth.GoogleAuth({
 const spreadsheetId =process.env.SPREDSHEET_ID
 // Create client instance for auth
 const client =  auth.getClient();
-// Instance of Google Sheets API
-const googleSheets = google.sheets({ version: "v4", auth: client });
-// Get metadata about spreadsheet
-const metaData =  googleSheets.spreadsheets.get({
-  auth,
-  spreadsheetId:process.env.SPREDSHEET_ID
-});
+// // Instance of Google Sheets API
+// const googleSheets = google.sheets({ version: "v4", auth: client });
+// // Get metadata about spreadsheet
+// const metaData =  googleSheets.spreadsheets.get({
+//   auth,
+//   spreadsheetId:process.env.SPREDSHEET_ID
+// });
 var dataincomming;
 
   
@@ -77,14 +77,14 @@ wss.on('connection',  function connection(ws) {
    const Email="sumaautomation.lk"
    const Message="Test Message"
    // Write row(s) to spreadsheet
-   googleSheets.spreadsheets.values.append({
-    auth,
-    spreadsheetId,
-    range: "Sheet1!A:B",
-    valueInputOption: "USER_ENTERED",
-    resource: {
-      values: [[Name, Email,Message]],
-    }})
+//    googleSheets.spreadsheets.values.append({
+//     auth,
+//     spreadsheetId,
+//     range: "Sheet1!A:B",
+//     valueInputOption: "USER_ENTERED",
+//     resource: {
+//       values: [[Name, Email,Message]],
+//     }})
 
     
   
